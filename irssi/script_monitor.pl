@@ -29,7 +29,7 @@ BEGIN
 		Irssi::print( "\002\0034Place the ". basename( __FILE__ ) .
                         " file in the scripts directory\002",
                         MSGLEVEL_CLIENTERROR );
-    }
+	}
 }
 
 my $watch = File::ChangeNotify->instantiate_watcher(
