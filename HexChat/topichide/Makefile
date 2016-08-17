@@ -28,7 +28,7 @@ install: $(NAMELIB)
 clean:
 	@echo "Cleaning plugin topichide"
 	@rm -rf *.o *.so
-#	@echo "Cleaning hidetopic plugin complete"
+#	@echo "Cleaning plugin topichide complete"
 
 .default: all
 
