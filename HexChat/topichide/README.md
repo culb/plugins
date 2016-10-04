@@ -10,7 +10,7 @@ Unix:
 * The Makefile will move the plugin to autoload directory
 
 Windows:
-* Put the files in the hexchat plugins directory.
+* Put the files in the hexchat plugins directory
 * Load the project in Visual Studio into the HexChat solution.
 * Built for the architecture your choice
 * The project will move the plugin to the autoload directory
