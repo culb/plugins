@@ -40,7 +40,7 @@ hook_command 'NOWTYPING' => sub
     return EAT_HEXCHAT;
 },
 { help_text =>
-    "Enable and disable the now playing feature on and off\n"
+    "Enable and disable the now playing feature\n"
     . "Set to 1 to enable and 0 to disable"
 };
 
