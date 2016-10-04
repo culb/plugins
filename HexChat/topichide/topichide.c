@@ -15,9 +15,9 @@ static hexchat_hook *hookTopic;
 static hexchat_hook *hookTopicCreation;
 
 static int
-topic_cb(char *word[], void *userdata)
+topic_cb( char *word[], void *userdata )
 {
-	hexchat_unhook(ph, hookTopic);
+	hexchat_unhook( ph, hookTopic );
 	hookTopic = NULL;
 	return HEXCHAT_EAT_HEXCHAT;
 }
@@ -25,7 +25,7 @@ topic_cb(char *word[], void *userdata)
 static int
 topic_creation_cb( char *word[], void *userdata )
 {
-	hexchat_unhook(ph, hookTopicCreation);
+	hexchat_unhook( ph, hookTopicCreation );
 	hookTopicCreation = NULL;
 	return HEXCHAT_EAT_HEXCHAT;
 }
