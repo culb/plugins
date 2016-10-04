@@ -13,7 +13,6 @@
 
 use strict;
 use warnings;
-use File::Spec;
 use HexChat qw( :all );
 
 preference_set();
