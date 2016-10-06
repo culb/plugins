@@ -22,15 +22,24 @@ sub preference_set
     { plugin_pref_set 'nowTyping', 1; }
 }
 
+my $enable = 0;
+
 hook_print 'Key Press' => sub
 {
     my( $keyNum ) = @{ $_[0] };
 
-    if( defined $keyNum and $keyNum != 65293 and plugin_pref_get 'nowTyping'
+    if( defined $keyNum
+        and $keyNum != 65293
+        and plugin_pref_get 'nowTyping'
+        and not $enable
         and context_info->{ type } == 2 or context_info->{ type } == 3 )
     {
+        $enable = 1;
         command( 'ME is typing...');
     }
+    elsif( $keyNum == 65293 )
+    { $enable = 0; }
+
     return EAT_NONE;
 };
 
