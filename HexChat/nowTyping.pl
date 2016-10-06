@@ -55,6 +55,6 @@ hook_command 'NOWTYPING' => sub
 
 register(
     'Now typing',
-    0X01,
+    0X02,
     'Notify a channel/PM that you are typing'
 );
