@@ -16,6 +16,7 @@ signal_add 'event notice' => sub
 {
     my( $server, $data, $nick, $address ) = @_;
     my( $me, $challenge ) = $data =~
+        /^(\S+)\s{1}:!ZNCAO\s{1}CHALLENGE\s{1}([\x21\x3F\x2E\x2C\x3A\x3B\x2F\x2A\x2D\x2B\x28\x29\w]{32})$/;
 
     $server->command(   'NOTICE ' . $nick . ' !ZNCAO RESPONSE '
                       . md5_hex( 'PASSWORD_GOES_HERE' . "::" . $challenge ) );
