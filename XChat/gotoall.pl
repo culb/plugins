@@ -1,32 +1,29 @@
-#Author: culb ( A.K.A nightfrog )
-#Please read the end of the file for notes and more information
+# File: gotoall.pl
+# Language: Perl
+#
+# Author: culb (nightfrog)
+# Contact: the01culb@gmail.com
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+########################################################################
 
 use strict;
 use warnings;
 use Xchat qw( :all );
 
-sub gotoall
+register( 'Go to All', 0x01, 'Clear the server list of activity' );
+
+hook_command 'GTA' => sub
 {
     my $context = get_info( 'context' );
-    for my $var ( get_list( 'channels' ) )
+    for my $channel ( get_list( 'channels' ) )
     {
-        command( "GUI COLOR 0", $var->{channel}, $var->{network} );
+        command( "GUI COLOR 0", $channel->{channel}, $channel->{network} );
     }
     set_context $context;
     return EAT_XCHAT;
-}
-
-hook_command( 'GTA', \&gotoall );
-register( 'Go to All', 0x1, 'Visit every window so it looks like each was visited manually' );
-
-__END__
-
-Syntax: /gta
-
-Version history:
-	001: Initial release (2010)
-
-Usage:
-    Go to each context so the color changes as if nothing ever happened in that channel.
-    This is the same as /allchan gui color 0 but that only works for channels, this script
-    works for ALL contexts and not just channels
+},
+{
+    help_text => 'Usage: GTA, Clear the server list(servers and channels) of activity'
+};
