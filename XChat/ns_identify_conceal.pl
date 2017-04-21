@@ -19,8 +19,10 @@ hook_print 'Key Press' => sub
         and $_[0][0] == 0xFF0D # Enter
         and my $text = get_info 'inputbox' )
     {
+        if( $text =~ /^(\s+)?[\/ns|\/?msg\s+nickserv].*/cg )
         {
             prnt 'Please fix your identification command';
+            # The following two lines fix and then send the NS command
             #$text =~ s|^\s*(?:\/)?||;
             #command $text;
             return EAT_ALL;
