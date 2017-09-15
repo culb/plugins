@@ -1,31 +1,28 @@
-################################################################################
-# Author: culb ( A.K.A nightfrog )
+# File: xchat_vlc.pl
+# Language: Perl
+# Version: 3
 #
-# Description:
-# Grab VLC' currently playing media information and broadcast it to the current dialog
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
 #
-# Version: 003
+# Description: Display VLC current playing song 
+# Usage: /VLC
 #
-# Date:2014
-################################################################################
+# Changes: 0, Initial
+#          1, Let the user choose which order to display the information. Warn of wrong login info
+#          2, Added -list and -add arguements. Use Perl 5.12 and above
+#
+# ToDo: The information stored in %store is open longer then I think is necessary.
+#       Find a way to fork LWP without pissing off XChat in Linux and Win32
+#       Seems different VLC versions use different xml formats. Handle this..
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+##################################################################################################
 
-################################################################################
-# TODO
-# The information stored in %store is open longer then I think is necessary.
-# Find a way to fork LWP without pissing off XChat in Linux and Win32
-# Seems different VLC versions use different xml formats. Handle this..
-################################################################################
 
-################################################################################
-# Version 001, Initial
-# Version 002, Let the user choose which order to display the information. Warn of wrong login info
-# Version 003, Added -list and -add arguements. Use Perl 5.12 and above
-################################################################################
-
-################################################################################
-# http://perldoc.perl.org/functions/keys.html
+# https://perldoc.perl.org/functions/keys.html
 # First paragraph explains why 5.12 and above is needed.
-################################################################################
 use v5.12.0;
 
 use strict;

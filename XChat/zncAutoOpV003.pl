@@ -1,33 +1,32 @@
-#Author: culb ( A.K.A nightfrog )
+# File: zncAutoOpV003.pl
+# Language: Perl
+# Version: 3
 #
-#Description:
-#AUTH to ZNC autoop
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
 #
-#Version: 003
+# Description: AUTH to ZNC autoop
+# Usage: Add a user
+#        /aoadd -n NETWORK -u USER -pw PASSWORD
 #
-#Date:2014
-
-# HOW TO USE THIS SCRIPT #
+#        Remove a user
+#        /aodel -n NETWORK -u USER
 #
-# Add a user
-# /aoadd -n NETWORK -u USER -pw PASSWORD
+#        Remove a network
+#        /aodel -n NETWORK
 #
-# Remove a user
-# /aodel -n NETWORK -u USER
+# Changes:
+#  2: I forget
 #
-# Remove a network
-# /aodel -n NETWORK
-
-#Changes:
-# 002:
-#  I forget
+#  3: Add and delete users/networks within XChat
+#     Create the conf file if it doesn't exist
+#     Forgot to EAT_XCHAT in confAdd() and confDelete() to hide the "Unknown command" error
+#     Delete the network from the conf if no user exists
+#     Add /aolist command to list the contents of the conf
 #
-# 003:
-#  Add and delete users/networks within XChat
-#  Create the conf file if it doesn't exist
-#  Forgot to EAT_XCHAT in confAdd() and confDelete() to hide the "Unknown command" error
-#  Delete the network from the conf if no user exists
-#  Add /aolist command to list the contents of the conf
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+###########################################################################################
 
 use strict;
 use warnings;

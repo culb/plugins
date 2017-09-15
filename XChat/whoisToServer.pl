@@ -1,6 +1,16 @@
-# nightfrog
-# Move whois to the server tab
-
+# File: whoisToServer.pl
+# Language: Perl
+# Version: 4282015
+#
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
+#
+# Description: Move whois events to the server tab
+# Usage: N/A
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+########################################################################
 use strict;
 use warnings;
 use Xchat qw( :all );

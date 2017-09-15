@@ -1,15 +1,17 @@
 # File: nowTyping.pl
 # Language: Perl
+# Version: 2
 #
-# Author: culb (nightfrog)
-# Contact: the01culb@gmail.com
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
 #
-# Usage: Let a channel or private message dialog know that you are typing
-#        Enable, /set nowtyping 1
+# Description: Let a channel or private message dialog know that you are typing
+# Usage: Enable, /set nowtyping 1
 #        Disable, /set nowtyping 0
 #
-# If this code is used in any way then
-# be courteous and include all of my information and notes
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+#########################################################################
 
 use strict;
 use warnings;

@@ -1,20 +1,28 @@
-#Author: culb ( A.K.A nightfrog )
+# File: sysinfoWindows.pl
+# Language: Perl
+# Version: 2
 #
-#Description:
-#Sysinfo for Windows
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
 #
-#Version: 002
+# Description: System information for Windows operating systems
+# Usage: /CSYS
 #
-#Date:2014
+# Changes:
+#  2:
+#   Added seconds and weeks to uptime output. Uses Win32::Uptime for compatibilty across Windows version
+#   Check all values returned for definition or return a generic value.
+#   Remove leading and trailing whitespaces from vales reported by windows.
+#   Convert multiple whitespaces to a single whitespace in values reported by Windows.
+#   Added /cnetid command to list all NIC's for the user to choose which to display.
+#   Check all integers for a negative value and convert to positive. Windows returns negatives at times.
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+########################################################################################################
 
-#Changes:
-# 002:
-#  Added seconds and weeks to uptime output. Uses Win32::Uptime for compatibilty across Windows version
-#  Check all values returned for definition or return a generic value.
-#  Remove leading and trailing whitespaces from vales reported by windows.
-#  Convert multiple whitespaces to a single whitespace in values reported by Windows.
-#  Added /cnetid command to list all NIC's for the user to choose which to display.
-#  Check all integers for a negative value and convert to positive. Windows returns negatives at times.
+
+
 
 use strict;
 use warnings;
@@ -421,7 +429,7 @@ sub unload_menus {
 
 
 
-register( 'culb Windows sysinfo', '002', 'System information. Annoy people with your computers information.', \&unload_menus );
+register( 'culb Windows sysinfo', 0x02, 'System information. Annoy people with your computers information.', \&unload_menus );
 
 __END__
 BEGIN

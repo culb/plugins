@@ -1,8 +1,12 @@
 # File: gotoall.pl
 # Language: Perl
+# Version: 1
 #
-# Author: culb (nightfrog)
-# Contact: the01culb@gmail.com
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
+#
+# Description: Clear the server list of activity
+# Usage: /GTA
 #
 # License: If this code is used in any way
 #          then be courteous and include all of my information and notes

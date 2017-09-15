@@ -1,6 +1,16 @@
-# Author: culb ( A.K.A nightfrog )
-# Hide the topic, channel url, and ChanServ notice when you join a channel
-
+# File: hide_topic.pl
+# Language: Perl
+# Version: 2
+#
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
+#
+# Description: Hide the topic, channel url, and ChanServ notice when a join a channel
+# Usage: N/A
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+#####################################################################################
 use strict;
 use warnings;
 use Xchat qw( :all );
@@ -31,6 +41,6 @@ sub you_join
 
 register(
     'Hide the topic',
-    0x2,
+    0x02,
     'Hide the topic when you join a channel'
 );

@@ -1,11 +1,21 @@
-# Author: culb (nightfrog)
+# File: script_monitor.pl
+# Language: Perl
 # Version: 1
+#
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
+#
 # Description: Automatically load and unload scripts
 #              as they change in the irssi scripts directory
+# Usage: N/A
 #
 # Note: Scripts are supposed to be linked to the autorun directory
 #       so this script only monitors *irssi directory*/scripts
 #       Follow the instructions at https://scripts.irssi.org
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+########################################################################
 
 use strict;
 use warnings;
@@ -16,8 +26,8 @@ use Irssi qw( command get_irssi_dir timeout_add );
 
 our $VERSION = 1;
 our %IRSSI = (
-	authors     => 'culb (nightfrog)',
-	contact     => 'the01culb@gmail.com',
+	authors     => 'culb( nightfrog )',
+	contact     => 'the01culb@protonmail.com',
 	description => 'Automatically load and unload scripts as they change',
 	license     => 'BSD'
 );

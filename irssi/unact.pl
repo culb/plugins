@@ -1,6 +1,16 @@
-# Author: culb (nightfrog)
+# File: unact.pl
+# Language: Perl
 # Version: 1
+#
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
+#
 # Description: Command to clear ACT of activity
+# Usage: /UNACT
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+########################################################################
 
 use strict;
 use warnings;
@@ -17,7 +27,7 @@ our %IRSSI = (
 # Prevent errors
 { package Irssi::Nick }
 
-command_bind 'unact' => sub
+command_bind 'UNACT' => sub
 {
     my $active = active_win()->{refnum};
     for my $window ( windows() )

@@ -1,4 +1,16 @@
-# Author: culb ( A.K.A nightfrog )
+# File: highlight_op.pl
+# Language: Perl
+# Version: 1
+#
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
+#
+# Description: Highlight the lines from channel operators
+# Usage: N/A
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+########################################################################
 
 use strict;
 use warnings;
@@ -16,4 +28,4 @@ hook_print( 'Channel Message',
 	}
 );
 
-register ( 'Highlight OPS', '1', 'Highlight OPS' );
+register ( 'Highlight OPS', 0x01, 'Highlight OPS' );

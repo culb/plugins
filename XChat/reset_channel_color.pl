@@ -1,12 +1,23 @@
-# Author: culb ( A.K.A nightfrog )
+# File: reset_channel_color.pl
+# Language: Perl
+# Version: 2
 #
-# Keep the channel color in the channel tree the same as if no activity happened
-# when a normal message or action (/me) is received ny users that match the
-# network, channel, and hostmask that you specify. Wildcards are valid.
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
 #
-# Note: I don't use this and was designed as someone wanted.
-# TODO: Create a user friendly config so users don't have
-# TODO: to manually edit the array in a hash in a hash
+# Description: Keep the channel color in the channel tree the same as if no activity happened
+#              when a normal message or action (/me) is received ny users that match the
+#              network, channel, and hostmask that you specify. Wildcards are valid.
+# Usage: Change the hash below with the networks, channels, and users hostmask's
+#
+# Note: I don't use this and was designed as someone wanted
+#
+# ToDo: Create a user friendly config so users don't have
+#       to manually edit the array in a hash in a hash
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+#############################################################################################
 
 use strict;
 use warnings;
@@ -15,7 +26,7 @@ use Xchat qw( :all );
 
 register(
     'Channel Tab Color',
-    0x2,
+    0x02,
     'Remove channel color activity when certain users speak'
 );
 

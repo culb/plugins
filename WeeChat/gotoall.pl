@@ -1,17 +1,21 @@
-############################################
 # File: gotoall.pl
 # Language: Perl
 # Version: 0
-# Author: culb (nightfrog)
-# Contact: the01culb[at]gmail[dot]com
+#
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
+#
+# Description: Clear activities from all buffers
 # Usage: /GTA
-# Purpose: Clear activities from all buffers
-############################################
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+########################################################################
 
 use strict;
 use warnings;
 
-weechat::register 'go_to_all', 'culb (nightfrog)', 0x0, 'BSD',
+weechat::register 'go_to_all', 'culb( nightfrog )', 0x0, 'BSD',
                   'Clear activities from all buffers', '', '';
 
 weechat::hook_command 'GTA', 'Go to all', '',

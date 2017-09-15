@@ -1,5 +1,16 @@
-# Author: culb ( A.K.A nightfrog )
-# Add the number of users in a channel next to the channel name
+# File: channel_switcher_user_count.pl
+# Language: Perl
+# Version: 1
+#
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
+#
+# Description: Add the number of users in a channel next to the channel name
+# Usage: N/A
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+########################################################################
 
 use strict;
 use warnings;
@@ -8,7 +19,7 @@ use Xchat qw( :all );
 
 register(
     'Number of users',
-    0x1,
+    0x01,
     'Add the number of users to the channel switcher'
 );
 

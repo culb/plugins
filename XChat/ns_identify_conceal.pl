@@ -1,11 +1,16 @@
 # File: ns_identify_conceal.pl
 # Language: Perl
 # Version: 1
-# Author: culb (nightfrog)
-# Contact: the01culb[at]gmail[dot]com
 #
-# Purpose: Prevent nickserv identification from accidentally being shown
-########################################################################
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
+#
+# Description: Prevent nickserv identification from accidentally being shown
+# Usage: N/A
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+############################################################################
 
 use strict;
 use warnings;

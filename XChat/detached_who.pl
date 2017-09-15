@@ -1,9 +1,18 @@
-# Author: culb ( A.K.A. nightfrog )
-# Show the output of /WHO in a separate window
+# File: detached_who.pl
+# Language: Perl
+# Version: 1
 #
+# Author: culb( nightfrog )
+# Contact: the01culb[at]protonmail[dot]com
+#
+# Description: Show the output of /WHO in a separate window
 # Usage: Type /DEWHO in a channel or PM context
 #
-# TODO: Let the user supply a nick or channel
+# ToDo: Let the user supply a nick or channel
+#
+# License: If this code is used in any way
+#          then be courteous and include all of my information and notes
+########################################################################
 
 use strict;
 use warnings;
@@ -16,7 +25,7 @@ my @record;
 
 register(
     'Detached WHO',
-    0x1,
+    0x01,
     'Create a detached window with the output of /WHO',
     sub{ $_->destroy for @record; }
 );
