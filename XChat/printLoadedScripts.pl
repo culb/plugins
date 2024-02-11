@@ -23,6 +23,9 @@ hook_command(
         for my $fileName ( sort grep s!::$!!, keys %Xchat::Script:: )
         {
     	    serverTab( get_info 'id' );
+    	    # The following is needed to remove what the unpack does in
+    	    # this regex in the file2pkg subroutine in the Embed.pm file
+    	    # s|([^A-Za-z0-9/])|'_'.unpack("H*",$1)|eg
     	    $fileName =~ s!_5f!_!g;
     	    prnt $fileName;
         }
