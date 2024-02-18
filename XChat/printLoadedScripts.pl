@@ -19,10 +19,10 @@ use Xchat qw( :all );
 hook_command(
     'PRINTSCRIPTS',
     sub{
+        serverTab( get_info 'id' );
         # Find names ending in :: and remove the ::
         for my $fileName ( sort grep s!::$!!, keys %Xchat::Script:: )
         {
-    	    serverTab( get_info 'id' );
     	    # The following is needed to remove what the unpack does in
     	    # this regex in the file2pkg subroutine in the Embed.pm file
     	    # s|([^A-Za-z0-9/])|'_'.unpack("H*",$1)|eg
