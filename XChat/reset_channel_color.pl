@@ -6,7 +6,7 @@
 # Contact: the01culb[at]protonmail[dot]com
 #
 # Description: Keep the channel color in the channel tree the same as if no activity happened
-#              when a normal message or action (/me) is received ny users that match the
+#              when a normal message or action (/me) is received by users that match the
 #              network, channel, and hostmask that you specify. Wildcards are valid.
 # Usage: Change the hash below with the networks, channels, and users hostmask's
 #
