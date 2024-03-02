@@ -18,11 +18,14 @@ use strict;
 use warnings;
 use Xchat qw( :all );
 
-hook_command( 'LOOPY', sub {
-
-	EATMEMORY:
-	goto EATMEMORY;
-
-}, { help_text => '/LOOPY - Lock it up.' } );
+hook_command( 'LOOPY', sub
+{
+    EATMEMORY:
+    goto EATMEMORY;
+}, 
+{
+    help_text => '/LOOPY - Lock it up.'
+}
+);
 
 register( 'Loopy', 0x01, 'Infinite loop' );

@@ -48,7 +48,7 @@ sub whoisToServer
 sub switchToServer
 {
     my $connectionID = shift;
-    for my $tab ( get_list 'channels' )
+    for my $tab( get_list 'channels' )
     {
         if( $tab->{ id } == $connectionID && $tab->{ type } == 1 )
         {
