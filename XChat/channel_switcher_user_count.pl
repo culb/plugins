@@ -20,36 +20,30 @@ use Xchat qw( :all );
 register(
     'Number of users',
     0x01,
-    'Add the number of users to the channel switcher'
+    'Add the number of users to the channel switcher',
+    undef
 );
 
-
-hook_print( "You Join", \&you_join );
-
-
-hook_timer( 3000,
-    sub
+hook_timer( 3000, sub
+{
+    my $context = get_info 'context';
+    for my $list ( get_list 'channels' )
     {
-        my $context = get_info 'context';
-
-        for my $list ( get_list 'channels' )
+        if ( $list->{type} == 2 )
         {
-            if ( $list->{type} == 2 )
-            {
-                set_context $list->{context};
-                command( 'SETTAB ' . $list->{users} . ' ' . $list->{channel} );
-            }
+            set_context $list->{context};
+            command( 'SETTAB ' . $list->{users} . ' ' . $list->{channel} );
         }
-
-        set_context $context;
-        return KEEP;
     }
-);
+    set_context $context;
+    return KEEP;
+});
 
 
-sub you_join
+hook_print( 'You Join', sub
 {
     my $number;
     $number++ for get_list 'users';
     command( 'SETTAB ' . $number . ' ' . get_info 'channel' ) if $number;
-}
+});
+
