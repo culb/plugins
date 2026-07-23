@@ -37,7 +37,7 @@ my $evotool = "C:\\Users\\Jesse\\AppData\\Roaming\\HexChat\\addons\\evotool2.exe
 #
 # Get the list
 # listGet()
-# A reference is return and you must dereference it!
+# A reference is returned and you must dereference it!
 # Example: my %hash = %{ listGet() };
 
 {
@@ -287,7 +287,7 @@ hook_print 'Close_Context' => sub
     {
         my %nnr = %{ listGet() };
 
-        #Proceed if it is a server context and from out list of networks
+        #Proceed if it is a server context and from the list of networks
         if( context_info->{ type } == '1'
             and exists $nnr{ $network }
             and grep { lc( $_ ) eq lc( $network ) } @netNames )
@@ -299,7 +299,7 @@ hook_print 'Close_Context' => sub
     return EAT_NONE;
 };
 
-# EAT the event since it's handled in eventChannelMessage()
+# EAT the event since it is handled in eventChannelMessage()
 hook_print 'Join' => sub
 {
     my ( $nick, $channel, $host ) = @{ $_[0] };
@@ -375,7 +375,7 @@ hook_print 'You Join' => sub
     #  OUT | TOPIC #EvoR
     #  OUT | WHO #EvoR
     #
-    # We need to detect the end of /names and then what we need to do.
+    # We need to detect the end of /names and then do what we need to do.
     # Let's do this....
 
     if( grep { lc( $_ ) eq lc( $network ) } @netNames )
@@ -389,7 +389,7 @@ hook_print 'You Join' => sub
             {
 
                 # We will who the channel in a little bit and add our realname
-                # to the hash then so for now use get_prefs() for our realname
+                # to the hash then, so for now use get_prefs() for our realname
                 command( 'QUOTE RCHG :' . get_prefs( 'irc_real_name' ) );
                 command( 'QUOTE PRIVMSG ' . $channel . ' :^STATUS ' . get_prefs('irc_real_name') );
 
@@ -484,19 +484,19 @@ hook_server 'RCHG' => sub
         {
             my $me = user_info();
 
-            #Only need to see when the actual realname changes
-            #and not the lap count and other shit in the realnames
+            # Only need to see when the actual realname changes
+            # and not the lap count and other shit in the realnames
             my $nameNew = ( split( /\^0|\^1/, $realname ) )[0];
             my $nameOld = ( split( /\^0|\^1/, $nnr{ $network }->{ $nick } ) )[0];
 
-            #Them
+            # Them
             if( lc( $nameNew ) ne lc( $nameOld ) and $me->{ nick } ne $nick )
             {
                 $nnr{ $network }->{ $nick } = $nameNew;
                 emit_print( 'Change Nick', $nameOld, $nameNew );
             }
 
-            #Us
+            # Us
             elsif( lc( $nameNew ) ne lc( $nameOld ) and $me->{ nick } eq $nick )
             {
                 $nnr{ $network }->{ $nick } = $nameNew;
@@ -564,10 +564,10 @@ hook_print 'Connected' => sub
 =pod
 hook_server '302' => sub
 {
-	# :server.name.com 302 unknown=+unknown@1.1.1.1
-	my ( $server, $numeric, $info ) = @{$_[0]};
-	if( defined $info and $info =~ /unknown=\+unknown\@(.+)/ ){ $ip = $1; }
-	return EAT_NONE;
+    # :server.name.com 302 unknown=+unknown@1.1.1.1
+    my ( $server, $numeric, $info ) = @{$_[0]};
+    if( defined $info and $info =~ /unknown=\+unknown\@(.+)/ ){ $ip = $1; }
+    return EAT_NONE;
 };
 =cut
 
